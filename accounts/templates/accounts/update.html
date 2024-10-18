@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+<h1>USER INFO UPDATE PAGE</h1>
+{% endblock title %}
+
+{% block content %}
+<form method = "POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="수정">
+</form>
+<a href="{% url "accounts:delete" %}">회원탈퇴</a>
+{% endblock content %}
