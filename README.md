@@ -10,3 +10,6 @@
 - Visual Studio Code
 - Google Chrome
 - Django 4.2.11
+
+## Workflow
+- 김가희, 김승우 git workflow 연습
