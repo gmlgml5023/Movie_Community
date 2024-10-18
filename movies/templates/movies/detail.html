@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+		<h1>DETAIL PAGE</h1>
+{% endblock title %}
+
+{% block content %}
+	<div class="container mt-4 mb-4 ">
+		<div class="card">
+			<div class="card-body">
+				<h5>{{movie.title}}</h5>
+				<p>{{movie.description}}</p>
+			</div>
+		</div>
+		<hr>
+        {% comment %} 업데이트 링크 {% endcomment %}
+        <a href="{% url 'movies:update' movie.pk %}">UPDATE</a>
+
+        {% comment %} 삭제 버튼 {% endcomment %}
+        <form action="{% url 'movies:delete' movie.pk %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">DELETE</button>
+        </form>
+        <br>
+        {% comment %} 뒤로가기(메인페이지) {% endcomment %}
+        <a href="{% url 'movies:index' %}">BACK</a>
+    </div>
+
+{% endblock content %}
