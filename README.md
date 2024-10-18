@@ -33,9 +33,9 @@
     - profile
     - follow
   - movies
-    - index
-    - create
-    - detail
+    - index ㅇ
+    - create 
+    - detail ㅇ
     - update
     - delete
     - comments_create
