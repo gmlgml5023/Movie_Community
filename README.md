@@ -14,3 +14,32 @@
 
 # workflow test
 - TEST
+
+
+# workflow
+- models (accounts, movies, ) 설계
+- forms.py (movies, ) 작성
+- base templates 작성
+  - Bootstrap
+  - navigator
+- applications
+  - accounts
+    - login
+    - logout
+    - signup
+    - update
+    - delete
+    - change_password
+    - profile
+    - follow
+  - movies
+    - index
+    - create
+    - detail
+    - update
+    - delete
+    - comments_create
+    - comments_delete
+    - likes
+  - dumpdata 생성
+  - 

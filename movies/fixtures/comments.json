@@ -1,0 +1,20 @@
+[
+{
+    "model": "movies.comment",
+    "pk": 1,
+    "fields": {
+        "movie": 1,
+        "user": 2,
+        "content": "재미없어요오람;ㅣㅇㄴㄻㅇㄴㄹ"
+    }
+},
+{
+    "model": "movies.comment",
+    "pk": 2,
+    "fields": {
+        "movie": 3,
+        "user": 3,
+        "content": "최애영화입니다."
+    }
+}
+]
