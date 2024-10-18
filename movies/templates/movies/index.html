@@ -12,7 +12,7 @@
 						<h5 class="card-header">{{ movie.title }}</h5>
 						<div class="card-body">
 							{% comment %} 디테일 링크 {% endcomment %}
-							<a href="#">DETAIL</a>
+							<a href="{% url "movies:detail" movie.pk %}">DETAIL</a>
 							{% comment %} 좋아요 버튼 {% endcomment %}
 						</div>
 					</div>
