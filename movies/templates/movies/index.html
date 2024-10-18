@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+  <h1>INDEX PAGE</h1>
+{% endblock title %}
+
+{% block content %}
+		<div class="row">
+			{% for movie in movies %}
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<h5 class="card-header">{{ movie.title }}</h5>
+						<div class="card-body">
+							{% comment %} 디테일 링크 {% endcomment %}
+							<a href="#">DETAIL</a>
+							{% comment %} 좋아요 버튼 {% endcomment %}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% comment %} 댓글 {% endcomment %}
+	<a href=""></a>
+{% endblock content %}

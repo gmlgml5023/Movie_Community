@@ -1,0 +1,78 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$vX22rT9F2eOf74zVzBWct7$U6vrBCGKzjiOdvoUdrpzhyPScrHfsAJ1KqHVP+du0H4=",
+        "last_login": "2024-10-18T07:52:29.790Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-10-18T07:52:15.820Z",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$9GZ4mCZDKNM109qvfEgAJ3$s52Ob2uVYmn0qV5tAiG80KwgfXqQ9J3QwdaNn0BR7l4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "testuser1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-18T07:53:11.276Z",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$6dP8BEzohLhVG2m5JDJ6Jn$pTFSTjsierSQFbPqCm7KwqzcqukxkqgSNua8nO21HWU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "testuser2",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-18T07:53:34.241Z",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$yosM76ab8yjOANd4KM6VRO$UIVIPCs8qwjnv0rPt2jm0DC2fL3KJMiv5IV/1M9QF3U=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "testuser3",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-18T07:53:43.099Z",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+}
+]
