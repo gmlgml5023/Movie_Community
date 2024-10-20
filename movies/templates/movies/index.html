@@ -5,20 +5,35 @@
 {% endblock title %}
 
 {% block content %}
-		<div class="row">
-			{% for movie in movies %}
-				<div class="col-md-6 mb-4">
-					<div class="card">
-						<h5 class="card-header">{{ movie.title }}</h5>
-						<div class="card-body">
-							{% comment %} 디테일 링크 {% endcomment %}
-							<a href="{% url "movies:detail" movie.pk %}">DETAIL</a>
-							{% comment %} 좋아요 버튼 {% endcomment %}
-						</div>
+	<div class="row">
+		{% for movie in movies %}
+			<div class="col-md-6 mb-4">
+				<div class="card">
+					<a href="{% url 'movies:detail' movie.pk %}">
+						<h4 class="card-header">{{ movie.title }}</h4>
+					</a>
+					<div class="card-body">
+							{% comment %} 영화 리뷰 {% endcomment %}
+              <p class="text-muted mb-3">작성자: <a href="{% url 'accounts:profile' movie.user %}">{{ movie.user }}</a></p>
+              <p class="text-muted mb-3">댓글 수: {{ movie.comment_set.count }}</p>
+              <p class="text-muted mb-4">좋아요 수: {{ movie.like_users.count }}</p>
+						{% comment %} 좋아요 버튼 {% endcomment %}
+							<form action="{% url 'movies:likes' movie.pk %}" method="POST">
+								{% csrf_token %}
+								{% if request.user in movie.like_users.all %}
+									<button type="submit" class="btn btn-outline-danger btn-sm">
+										<i class="bi bi-heart-fill"></i> 좋아요 취소
+									</button>
+								{% else %}
+									<button type="submit" class="btn btn-outline-primary btn-sm">
+										<i class="bi bi-heart"></i> 좋아요
+									</button>
+								{% endif %}
+							</form>
+
 					</div>
 				</div>
-			{% endfor %}
-		</div>
-	{% comment %} 댓글 {% endcomment %}
-	<a href=""></a>
+			</div>
+		{% endfor %}
+	</div>
 {% endblock content %}

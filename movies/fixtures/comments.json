@@ -5,7 +5,8 @@
     "fields": {
         "movie": 1,
         "user": 2,
-        "content": "재미없어요오람;ㅣㅇㄴㄻㅇㄴㄹ"
+        "content": "진짜 재미없었어요~",
+        "updated_at": "2024-10-20T06:53:32.283Z"
     }
 },
 {
@@ -14,7 +15,18 @@
     "fields": {
         "movie": 3,
         "user": 3,
-        "content": "최애영화입니다."
+        "content": "최애영화입니다.",
+        "updated_at": "2024-10-20T06:53:32.283Z"
+    }
+},
+{
+    "model": "movies.comment",
+    "pk": 3,
+    "fields": {
+        "movie": 1,
+        "user": 1,
+        "content": "댓글 달리나",
+        "updated_at": "2024-10-20T06:53:32.283Z"
     }
 }
 ]

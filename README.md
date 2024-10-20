@@ -12,16 +12,24 @@
 - Django 4.2.11
 
 
-# workflow test
-- TEST
-
+# 초기 설정
+- git clone
+- 가상환경 생성 : `python -m venv venv`
+- 가상환경 실행 on : `source venv/Scripts/activate`
+- 라이브러리 설치 : `pip install -r requirements.txt`
+- 설계도생성 및 이식 : `python manage.py makemigrations`, `python manage.py migrate`
+- dumpdata 로드 : `python manage.py loaddata users.json movies.json comments.json`
+- dumpdata 저장
+  - `python -Xutf8 manage.py dumpdata --indent 4 movies.movie > movies.json`
+  - `python -Xutf8 manage.py dumpdata --indent 4 movies.comment > comments.json`
+  - `python -Xutf8 manage.py dumpdata --indent 4 accounts.user > users.json`
 
 # workflow
 - models (accounts, movies, ) 설계
 - forms.py (movies, ) 작성
 - base templates 작성
-  - Bootstrap
-  - navigator
+  - Bootstrap ㅇ
+  - navigator ㅇ
 - applications
   - accounts
     - login
@@ -34,12 +42,17 @@
     - follow
   - movies
     - index ㅇ
-    - create 
+    - create ㅇ
     - detail ㅇ
-    - update
-    - delete
-    - comments_create
-    - comments_delete
-    - likes
+    - update ㅇ
+    - delete ㅇ
+    - comments_create ㅇ
+    - comments_delete ㅇ
+    - likes ㅇ
   - dumpdata 생성
   - 
+
+
+  # 에러사항
+  - 로그인 후 에러
+  
