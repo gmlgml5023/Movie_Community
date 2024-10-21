@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import get_user_model
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from .forms import CustomUserCreationForm, CustomUserChangeForm
@@ -13,7 +14,7 @@ def login(request):
     if request.method == "POST":
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
-            auth_login(request, form.get_user)
+            auth_login(request, form.get_user())
             return redirect('movies:index')
     else:
         form = AuthenticationForm()
@@ -47,6 +48,7 @@ def update(request):
         form = CustomUserChangeForm(request.POST, instance = request.user)
         if form.is_valid():
             form.save()
+            
             return redirect('movies:index')
     else:
         form = CustomUserChangeForm(instance = request.user)
@@ -62,18 +64,19 @@ def delete(request):
     return redirect('movies:index')
 
 @login_required
-def change_password(request):
+def password(request, user_pk):
     if request.method == "POST":
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
             form.save()
+            update_session_auth_hash(request, form.user)
             return redirect('movies:index')
     else:
-        form = PasswordChangeForm()
+        form = PasswordChangeForm(request.user)
     context = {
         'form': form
     }
-    return render(request, 'accounts/change_password.html', context)
+    return render(request, 'accounts/password.html', context)
 
 def profile(request, username):
     person = User.objects.get(username=username)
@@ -84,7 +87,7 @@ def profile(request, username):
 
 @login_required
 def follow(request, user_pk):
-    profile_owner = User.object.get(pk=user_pk)
+    profile_owner = User.objects.get(pk=user_pk)
     if request.user in profile_owner.followers.all():
         profile_owner.followers.remove(request.user)
     else:
